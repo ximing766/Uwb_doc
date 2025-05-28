@@ -99,6 +99,12 @@
 ```
 ---
 
+## 🔗 相关文档
+
+- [协议文档](../protocol/control-protocol.md)
+- [常见问题解答](../guide/faq.md)
+
+
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg)](https://uwb-tech.com)
 [![Documentation](https://img.shields.io/badge/docs-latest-blue.svg)](https://docs.uwb-tech.com)
 [![Support](https://img.shields.io/badge/support-24%2F7-green.svg)](mailto:support@uwb-tech.com)

@@ -174,8 +174,6 @@ DCS(05FFFFFFFFFF06FFFFFFFFFF39D100011500805401000F000019A82025031715145821FFD442
 ## 🔗 相关文档
 
 - [快速开始指南](../guide/quick-start.md)
-- [API参考文档](../api/api-reference.md)
-- [硬件规格说明](../guide/hardware.md)
 - [常见问题解答](../guide/faq.md)
 
 ---
