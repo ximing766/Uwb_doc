@@ -19,7 +19,6 @@ def convert_with_pandoc_enhanced(input_file, output_file):
             '-o', output_file,
             '--extract-media=docs/images',  # 提取图片到docs/images目录
             '--wrap=none',  # 不自动换行
-            '--markdown-headings=atx',  # 使用ATX风格标题（#）
             '--standalone',  # 生成独立文档
             '--toc',  # 生成目录
             '--toc-depth=3',  # 目录深度
@@ -104,15 +103,13 @@ def main():
     create_docs_structure()
     
     # 2. 转换主要文档
-    input_file = 'Control_protocol(20250421).docx'
-    output_file = 'docs/protocol/control-protocol.md'
+    input_file = 'docx/UWB_Introduce.docx'
+    output_file = 'docs/UWB_Introduce.md'
     
     if Path(input_file).exists():
         convert_with_pandoc_enhanced(input_file, output_file)
     else:
         print(f"输入文件 {input_file} 不存在")
-    
-    print("文档转换流程完成")
 
 if __name__ == "__main__":
     main()

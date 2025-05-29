@@ -9,6 +9,8 @@ edit_uri: edit/main/docs/
 
 nav:
   - 首页: index.md
+  - UWB技术:
+    - UWB技术介绍: protocol/UWB_Introduce.md
   - 协议文档:
     - 控制协议规范: protocol/control-protocol.md
   - 开发指南:
@@ -30,7 +32,6 @@ theme:
     - content.tabs.link
     - content.tooltips
     - header.autohide
-    - navigation.expand
     - navigation.footer
     - navigation.indexes
     - navigation.instant
@@ -69,6 +70,7 @@ theme:
 markdown_extensions:
   - toc:
       permalink: true
+      toc_depth: 3
   - admonition
   - codehilite:
       guess_lang: false

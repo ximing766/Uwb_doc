@@ -1,16 +1,15 @@
 # UWB知识点文档
 
-这是一个专门收集和整理UWB（Ultra-Wideband）技术相关知识点的文档站点。我们致力于为UWB开发者、研究人员和技术爱好者提供全面、准确、实用的技术文档和开发指南。
-
+这是一个专门收集和整理UWB（Ultra-Wideband）技术相关知识点的文档站点。
 ## 📖 文档内容
 
 ### 协议文档
-- [控制协议规范](docs/protocol/control-protocol.md) - UWB读卡器控制协议详细说明
+- [控制协议规范](docs/protocol/control-protocol.md) - UWB控制协议详细说明
 
 ## 🛠️ 技术栈
 
 - **[MkDocs](https://www.mkdocs.org/)** - 静态站点生成器
-- **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)** - 现代化的文档主题
+- **[Material](https://squidfunk.github.io/mkdocs-material/)** - 现代化的文档主题
 - **[PyMdown Extensions](https://facelessuser.github.io/pymdown-extensions/)** - Markdown扩展
 - **[GitHub Pages](https://pages.github.com/)** - 文档托管平台
 - **[GitHub Actions](https://github.com/features/actions)** - 自动化部署
