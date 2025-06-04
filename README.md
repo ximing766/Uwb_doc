@@ -36,9 +36,3 @@ UwbKnowledgePoints/
 ├── Control_protocol(20250421).docx # 原始协议文档
 └── README.md                      # 项目说明
 ```
-
-### 文档许可
-本项目的文档内容采用 [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) 许可协议。
-
-
-## 🙏 致谢

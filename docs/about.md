@@ -49,31 +49,7 @@
     <p>想要贡献文档内容？有好的技术文章想要分享？欢迎与我们合作！</p>
     <a href="https://github.com/ximing766/my-project-doc/issues" title="内容合作">提交Issue →</a>
   </div>
-  <div class="feature-item">
-    <h3>🤝 商务合作</h3>
-    <p>寻求项目合作或技术服务？让我们一起探讨合作的可能性。</p>
-    <a href="mailto:ximing766@gmail.com" title="商务合作">商务洽谈 →</a>
-  </div>
 </div>
-
-## 📄 版权声明
-
-### 文档许可
-本项目的文档内容采用 [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) 许可协议。
-
-**您可以自由地：**
-
-- ✅ **分享** - 复制和重新分发材料
-- ✅ **改编** - 重新混合、转换和构建材料
-- ✅ **商业使用** - 用于任何目的，包括商业用途
-
-**但需要遵循：**
-
-- 📝 **署名** - 必须给出适当的署名
-- 🔄 **标明变更** - 如有修改必须标明
-
-
-## 🙏 致谢
 
 ---
 
