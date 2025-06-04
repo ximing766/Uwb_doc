@@ -16,7 +16,6 @@ nav:
   - 开发指南:
     - 快速开始: guide/quick-start.md
     - 技术概述: guide/overview.md
-    - 常见问题: guide/faq.md
   - 关于: about.md
 
 theme:

@@ -145,7 +145,6 @@ UWB使用脉冲无线电（Impulse Radio）技术：
 - [快速开始指南](quick-start.md)
 - [API参考文档](../api/api-reference.md)
 - [硬件规格说明](hardware.md)
-- [常见问题解答](faq.md)
 
 ---
 
