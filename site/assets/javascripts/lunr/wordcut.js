@@ -2447,7 +2447,8 @@ Glob.prototype._processGlobStar2 = function (prefix, read, abs, remain, index, i
 }
 
 Glob.prototype._processSimple = function (prefix, index, cb) {
-
+  // XXX review this.  Shouldn't it be doing the mounting etc
+  // before doing stat?  kinda weird?
   var self = this
   this._stat(prefix, function (er, exists) {
     self._processSimple2(prefix, index, er, exists, cb)
@@ -2934,7 +2935,8 @@ GlobSync.prototype._processGlobStar = function (prefix, read, abs, remain, index
 }
 
 GlobSync.prototype._processSimple = function (prefix, index) {
-
+  // XXX review this.  Shouldn't it be doing the mounting etc
+  // before doing stat?  kinda weird?
   var exists = this._stat(prefix)
 
   if (!this.matches[index])
@@ -3052,7 +3054,12 @@ function makeres (key) {
     var len = cbs.length
     var args = slice(arguments)
 
-
+    // XXX It's somewhat ambiguous whether a new callback added in this
+    // pass should be queued for later execution if something in the
+    // list of callbacks throws, or if it should just be discarded.
+    // However, it's such an edge case that it hardly matters, and either
+    // choice is likely as surprising as the other.
+    // As it happens, we do go ahead and schedule it for later execution.
     try {
       for (var i = 0; i < len; i++) {
         cbs[i].apply(null, args)
@@ -3938,6 +3945,7 @@ Minimatch.prototype.matchOne = function (file, pattern, partial) {
 
         this.debug('\nglobstar while', file, fr, pattern, pr, swallowee)
 
+        // XXX remove this slice.  Just pass the start index.
         if (this.matchOne(file.slice(fr), pattern.slice(pr), partial)) {
           this.debug('globstar found match!', fr, fl, swallowee)
           // found a match.
