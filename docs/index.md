@@ -6,7 +6,6 @@
 
 ### 协议文档
 - [控制协议规范](protocol/control-protocol.md) - UWB读卡器控制协议详细说明
-- [UWB技术介绍](protocol/uwb-introduction.md) - UWB技术的基本概念和原理
 
 ### 开发指南
 - [快速开始](guide/quick-start.md) - 快速上手UWB调试
