@@ -307,13 +307,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/" class="md-tabs__link">
+      <a href="../../download/" class="md-tabs__link">
         
   
   
     
   
-  关于
+  资源下载
 
       </a>
     </li>
@@ -584,25 +584,10 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🚀 烧录固件">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      📝 操作步骤
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       🔧 环境搭建
     </span>
@@ -614,7 +599,7 @@
           <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 🔌 硬件连接
+      1. ⚙️ 通信参数配置
     </span>
   </a>
   
@@ -623,16 +608,7 @@
           <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. ⚙️ 通信参数配置
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. 📱 手机配置
+      2. 📱 手机配置
     </span>
   </a>
   
@@ -644,7 +620,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       🔗 相关文档
     </span>
@@ -698,12 +674,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/" class="md-nav__link">
+      <a href="../../download/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    关于
+    资源下载
     
   </span>
   
@@ -746,14 +722,9 @@
 
 
 <h1 id="_1">🚀 快速开始<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>📖 <strong>本指南将帮助您快速上手UWB调试，从环境搭建到设备连接，让您轻松开启UWB开发之旅！</strong></p>
-</blockquote>
-<hr />
 <h2 id="_2">📖 概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>本文档提供了UWB设备调试的完整流程，包括固件烧录、环境配置和设备连接等关键步骤。按照本指南操作，您将能够快速建立起完整的UWB开发环境。</p>
+<p>本文档提供了UWB设备调试的完整流程，包括固件烧录、环境配置和设备连接等关键步骤。</p>
 <h2 id="_3">📋 前置要求<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>在开始之前，请确保您的开发环境满足以下要求：</p>
 <table>
 <thead>
 <tr>
@@ -770,7 +741,7 @@
 </tr>
 <tr>
 <td>🔧 <strong>烧录工具</strong></td>
-<td>DK6</td>
+<td><a href="../../download/">DK6</a></td>
 <td>官方推荐烧录软件</td>
 </tr>
 <tr>
@@ -780,56 +751,37 @@
 </tr>
 <tr>
 <td>📡 <strong>串口工具</strong></td>
-<td>SuperCom (推荐)</td>
-<td>用于串口通信调试</td>
+<td><a href="https://github.com/SuperStudio/SuperCom/releases">SuperCom</a></td>
+<td>用于串口调试</td>
 </tr>
 <tr>
 <td>📱 <strong>调试设备</strong></td>
-<td>支持UWB的手机</td>
+<td>支持UWB的手机或Tag</td>
 <td>用于功能验证测试</td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>⚠️ <strong>重要提示</strong>: 请确保所有硬件设备正常工作，驱动程序已正确安装。</p>
-</blockquote>
 <h2 id="_4">🚀 烧录固件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="_5">📝 操作步骤<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>🎯 <strong>目标</strong>: 将固件烧录到UWB模组中</p>
-</blockquote>
-<p>1 <strong>🔌 硬件连接</strong></p>
-<p><code>UWB模组 ←→ Type-C线 ←→ 电脑USB口</code></p>
-<ul>
-<li>使用Type-C连接线连接主anchor板和电脑</li>
-</ul>
-<p>2 <strong>⚡ 进入烧录模式</strong></p>
-<p><code>操作序列: 按住SW1 → 单击SW2 → 进入烧录模式</code></p>
-<ul>
-<li>按住电路板<code>SW1</code>按键不放</li>
-<li>单击<code>SW2</code>按键</li>
-<li>设备进入烧录模式</li>
-</ul>
-<p>3 <strong>💾 执行烧录</strong></p>
-<ul>
-<li>打开<code>DK6</code>烧录软件</li>
-<li>选择对应的<code>.bin</code>固件文件</li>
-<li>选择anchor Type-C对应的COM口</li>
-<li>点击<code>Program Device</code>开始烧录</li>
-<li>等待烧录完成提示</li>
-</ul>
+<p>1 <strong>🔌 硬件连接</strong>
+   <code>UWB模组 ←→ Type-C线 ←→ 电脑USB口</code>
+   - 使用Type-C连接线连接主anchor板和电脑</p>
+<p>2 <strong>⚡ 进入烧录模式</strong>
+   <code>操作序列: 按住SW1 → 单击SW2 → 进入烧录模式</code>
+   - 长按电路板<code>SW1</code>按键不放
+   - 单击<code>SW2</code>按键
+   - 设备进入烧录模式,此时松开<code>SW1</code></p>
+<p>3 <strong>💾 执行烧录</strong>
+   - 打开<code>[DK6](../download.md)</code>烧录软件
+   - 选择对应的<code>.bin</code>固件文件
+   - 选择anchor Type-C对应的COM口
+   - 点击<code>Program Device</code>开始烧录
+   - 烧录过程有进度显示,等待100%完成即可</p>
 <blockquote>
 <p>✅ <strong>烧录成功标志</strong>: 软件显示"Programming Successful"或类似成功提示</p>
 </blockquote>
-<h2 id="_6">🔧 环境搭建<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="1">1. 🔌 硬件连接<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<h4 id="_7">连接拓扑图<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span><code>电脑 ←→ Type-C线 ←→ UWB模组 ←→ USB转串口线 ←→ Reader设备
-     (供电/烧录/调试)              (数据通信)
-</code></pre></div>
-
-<h3 id="2">2. ⚙️ 通信参数配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<h4 id="_8">串口参数设置<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<h2 id="_5">🔧 环境搭建<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="1">1. ⚙️ 通信参数配置<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<h4 id="_6">串口参数设置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -866,8 +818,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="3">3. 📱 手机配置<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<h4 id="_9">基础设置检查清单<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code>电脑 ←→ Type-C串口线 ←→ UWB模组 ←→ USB转串口线 ←→ Reader设备
+     (供电/烧录/调试)              (数据通信)
+</code></pre></div>
+
+<h3 id="2">2. 📱 手机配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<h4 id="_7">基础设置检查清单<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -892,21 +848,20 @@
 </tr>
 </tbody>
 </table>
-<h4 id="_10">🔧 故障排除<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="_8">🔧 故障排除<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>🚨 <strong>连接问题解决方案</strong></p>
 </blockquote>
 <div class="codehilite"><pre><span></span><code><span class="c1"># 连接故障处理流程</span>
 <span class="m">1</span>.<span class="w"> </span>检查蓝牙状态<span class="w"> </span>→<span class="w"> </span>重新开启蓝牙
-<span class="m">3</span>.<span class="w"> </span>系统级重置<span class="w"> </span>→<span class="w"> </span>开关飞行模式
-<span class="m">4</span>.<span class="w"> </span>最终方案<span class="w"> </span>→<span class="w"> </span>重启手机设备
+<span class="m">2</span>.<span class="w"> </span>系统级重置<span class="w"> </span>→<span class="w"> </span>开关飞行模式
+<span class="m">3</span>.<span class="w"> </span>最终方案<span class="w"> </span>→<span class="w"> </span>重启手机设备
 </code></pre></div>
 
 <hr />
-<h2 id="_11">🔗 相关文档<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_9">🔗 相关文档<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../../protocol/control-protocol/">协议文档</a></li>
-<li><a href="../guide/faq.md">常见问题解答</a></li>
 </ul>
 <p><a href="https://uwb-tech.com"><img alt="Made with ❤️" src="https://img.shields.io/badge/Made%20with-❤️-red.svg" /></a>
 <a href="https://docs.uwb-tech.com"><img alt="Documentation" src="https://img.shields.io/badge/docs-latest-blue.svg" /></a>
