@@ -1,7 +1,7 @@
 site_name: UWB技术文档
 site_description: "记录技术笔记、项目文档和工具指南"
 site_author: "Kewei@QLL"
-copyright: "Copyright © 2024 Kewei@QLL. All rights reserved."
+copyright: "Copyright © 2025 Kewei@Qilang². All rights reserved."
 site_url: "https://github.com/ximing766/UwbKnowledgePoints.git"
 repo_url: https://github.com/ximing766/UwbKnowledgePoints.git
 repo_name: GitHub
@@ -17,34 +17,43 @@ nav:
   - 资源下载: download.md
 
 theme:
-  name: material
-  language: zh # 已配置为中文
+  name: material          # readthedocs, material, gitbook, 
+  language: zh                       # 界面文字用中文
   features:
-    - announce.dismiss
-    - content.action.edit
-    - content.action.view
-    - content.code.annotate
-    - content.code.copy
-    - content.code.select
-    - content.tabs.link
-    - content.tooltips
-    - header.autohide
-    - navigation.footer
-    - navigation.indexes
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
-    - navigation.prune
-    - navigation.sections
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
-    - toc.follow
-    - toc.integrate
+    # ---------- 公告栏 ----------
+    - announce.dismiss               # 顶部公告条支持手动关闭（需配合 theme.announce 配置）
+
+    # ---------- 正文操作按钮 ----------
+    - content.code.annotate          # 代码块支持行内「+ 号」弹出注解
+    - content.code.copy              # 代码块右上角显示「复制」按钮
+    - content.code.select            # 代码块右上角显示「选中」按钮（一键全选）
+    - content.tabs.link              # 把 Tab 标签的标题变成可跳转的锚点
+    - content.tooltips               # 鼠标悬停到内部链接时显示摘要小浮层
+
+    # ---------- 头部导航 ----------
+    - header.autohide                # 向下滚动时自动隐藏顶部标题栏，向上滚动时恢复
+
+    # ---------- 左侧导航 ----------
+    - navigation.footer              # 在导航栏底部放「上一页 / 下一页」快捷按钮
+    - navigation.indexes             # 允许给章节首页单独指定 index.md（导航栏点击章节即进入）
+    - navigation.instant             # 单页应用（SPA）式无刷新加载，速度更快
+    - navigation.instant.prefetch    # 鼠标悬停链接时就开始预拉取，进一步提速
+    - navigation.instant.progress    # 顶部显示极细的加载进度条
+    - navigation.prune               # 只渲染当前可见分支，长文档侧边栏性能更好
+    - navigation.sections            # 导航栏支持折叠章节（手风琴效果）
+    - navigation.tabs                # 顶层出现「标签式」一级菜单（适合少量顶级分组）
+    - navigation.tabs.sticky         # 标签栏随内容滚动时保持置顶
+    - navigation.top                 # 右下角「返回顶部」按钮
+    - navigation.tracking            # 滚动时自动高亮当前所在章节（与 toc.follow 联动）
+
+    # ---------- 搜索 ----------
+    - search.highlight               # 搜索结果把匹配词高亮
+    - search.share                   # 搜索框右侧增加「复制搜索链接」按钮
+    - search.suggest                 # 输入时实时下拉联想（需支持 search 插件）
+
+    # ---------- 右侧目录 ----------
+    - toc.follow                     # 跟随滚动自动高亮当前章节
+    - toc.integrate                  # 把目录直接嵌进左侧导航，不再单独右侧栏
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

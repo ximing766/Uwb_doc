@@ -8,18 +8,7 @@
 
 <div class="download-section">
   <div class="download-grid">
-    <div class="download-item">
-      <div class="file-icon">📦</div>
-      <div class="download-content">
-        <div class="file-info">
-          <h4>UWB源码包</h4>
-          <span class="file-size">15.6 MB</span>
-          <span class="file-date">2024-12-20</span>
-          <span class="file-version">v2.1.0</span>
-        </div>
-      </div>
-      <a href="../resource/UWB-Source.zip" class="download-btn" download="UWB-Source.zip">下载</a>
-    </div>
+  
     
   </div>
 </div>
@@ -34,9 +23,8 @@
       <div class="file-icon">📡</div>
       <div class="download-content">
         <div class="file-info">
-          <h4>DK6 编程工具</h4>
-          <span class="file-size">1.2 MB</span>
-          <span class="file-date">2024-12-20</span>
+          <h4 style="margin-right: 15px;">DK6 编程工具</h4>
+          <span class="file-size" id="dk6-file-size">获取中...</span>
           <span class="file-version">v1.0.0</span>
         </div>
       </div>
@@ -52,18 +40,7 @@
 
 <div class="download-section">
   <div class="download-grid">
-    <div class="download-item">
-      <div class="file-icon">🎨</div>
-      <div class="download-content">
-        <div class="file-info">
-          <h4>UI设计资源</h4>
-          <span class="file-size">12.5 MB</span>
-          <span class="file-date">2024-12-16</span>
-          <span class="file-version">v2.0.0</span>
-        </div>
-      </div>
-      <a href="https://github.com/ximing766/UwbKnowledgePoints/raw/main/docs/resource/UI-Assets.psd" class="download-btn" download="UI-Assets.psd">下载</a>
-    </div>
+    
   </div>
 </div>
 
@@ -73,19 +50,12 @@
 
 如果您在下载或使用过程中遇到任何问题，请通过以下方式联系我们：
 
-- **邮箱**: ximing766@gmail.com
+- **邮箱**: xxx@gmail.com
 - **GitHub Issues**: [提交问题](https://github.com/ximing766/ximing766.github.io/issues)
 
 ---
 
 <style>
-/* 美化标题样式 */
-h2 {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin: 2rem 0 1.5rem 0;
-  color: #1e293b;
-}
 
 .download-section {
   margin: 1rem 0;
@@ -302,6 +272,28 @@ h2 {
 </style>
 
 <script>
+// Auto-fetch file information
+async function fetchFileInfo() {
+  try {
+    // Fetch DK6Prog.exe file info
+    const dk6Response = await fetch('../resource/DK6Prog.exe', { method: 'HEAD' });
+    if (dk6Response.ok) {
+      const contentLength = dk6Response.headers.get('content-length');
+      
+      // Update file size
+      if (contentLength) {
+        const sizeInMB = (parseInt(contentLength) / (1024 * 1024)).toFixed(1);
+        document.getElementById('dk6-file-size').textContent = sizeInMB + ' MB';
+      }
+    }
+  } catch (error) {
+    console.log('Failed to fetch file info:', error);
+  }
+}
+
+// Run when page loads
+document.addEventListener('DOMContentLoaded', fetchFileInfo);
+
 function downloadFile(filename) {
   // This is a placeholder function
   // In a real implementation, you would handle the actual file download
@@ -314,4 +306,4 @@ function downloadFile(filename) {
 
 ---
 
-*最后更新: 2025*
+*本指南持续更新，请以最新版本为准。如有疑问，请联系技术支持。*
