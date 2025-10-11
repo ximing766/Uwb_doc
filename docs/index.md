@@ -11,10 +11,13 @@
 - [快速开始](guide/quick-start.md) - 快速上手UWB调试
 - [技术概述](guide/overview.md) - UWB技术基础知识
 
+### 资源下载
+- [DK6](download.md) - DK6烧录工具
+
 
 <div style="text-align: center; margin-top: 50px; margin-bottom: 30px;">
   <a href="guide/quick-start/" class="md-button md-button--primary" style="margin-right: 20px;">快速开始</a>
-  <a href="guide/overview/" class="md-button">技术概述</a>
+  <a href="protocol/control-protocol/" class="md-button">协议文档</a>
 </div>
 
 ---

@@ -1,6 +1,6 @@
 # UWB技术概述
 
-本文档提供UWB（Ultra-Wideband）技术的全面介绍，帮助开发者理解UWB的基本原理、特性和应用场景。
+本文档提供UWB（Ultra-Wideband）技术的介绍，帮助理解UWB的基本原理、特性和应用场景。
 
 ## 🌟 什么是UWB
 
@@ -143,9 +143,3 @@ UWB使用脉冲无线电（Impulse Radio）技术：
 ## 🔗 参考资源
 
 - [快速开始指南](quick-start.md)
-- [API参考文档](../api/api-reference.md)
-- [硬件规格说明](hardware.md)
-
----
-
-*本文档持续更新，反映UWB技术的最新发展动态。*

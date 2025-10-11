@@ -27,7 +27,7 @@ UwbKnowledgePoints/
 │   │   ├── overview.md            # 技术概述
 │   │   └── faq.md                 # 常见问题
 │   ├── images/                    # 图片资源
-│   └── about.md                   # 关于页面
+│   └── download.md                # 资源下载页面
 ├── .github/                       # GitHub配置
 │   └── workflows/                 # GitHub Actions
 │       └── deploy.yml             # 部署工作流
