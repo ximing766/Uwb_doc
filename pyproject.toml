@@ -1,5 +1,5 @@
 [project]
-name = "uwbknowledgepoints"
+name = "uwb_doc"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -16,3 +16,9 @@ dependencies = [
     "pymdown-extensions>=10.15",
     "python-docx>=1.1.2",
 ]
+
+[project.scripts]
+mkdocs = "mkdocs.__main__:cli"
+
+[tool.uv]
+package = true

@@ -6,9 +6,9 @@
 
 | 名称 | 版本 | 日期 | 作者 | 修订记录 |
 |------|------|------|------|----------|
-| Reader Control Protocol | v1.0 | 2025-03-24 | Kewei@QLL | 初始版本 |
-| Reader Control Protocol | v1.1 | 2025-04-16 | Kewei@QLL | 更新 |
-| Reader Control Protocol | v1.2 | 2025-05-23 | Kewei@QLL | 更新 |
+| Reader Control Protocol | v1.0 | 2025-03-24 | Kewei@Qilang² | init |
+| Reader Control Protocol | v1.1 | 2025-04-16 | Kewei@Qilang² | update |
+| Reader Control Protocol | v1.2 | 2025-05-23 | Kewei@Qilang² | update |
 
 ## 1 协议概述
 

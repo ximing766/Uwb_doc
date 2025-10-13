@@ -13,7 +13,7 @@
 
 ### 资源下载
 - [DK6](download.md) - DK6烧录工具
-
+- [UWBDash](download.md) - UWB调试工具
 
 <div style="text-align: center; margin-top: 50px; margin-bottom: 30px;">
   <a href="guide/quick-start/" class="md-button md-button--primary" style="margin-right: 20px;">快速开始</a>

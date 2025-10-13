@@ -9,7 +9,7 @@
         <meta name="description" content="记录技术笔记、项目文档和工具指南">
       
       
-        <meta name="author" content="Kewei@QLL">
+        <meta name="author" content="Kewei@Qilang²">
       
       
         <link rel="canonical" href="https://github.com/ximing766/UwbKnowledgePoints.git/download/">
@@ -615,19 +615,6 @@
 
 
   
-    <a href="https://github.com/ximing766/UwbKnowledgePoints.git/edit/main/docs/download.md" title="编辑此页" class="md-content__button md-icon">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
-    </a>
-  
-  
-    
-      
-    
-    <a href="https://github.com/ximing766/UwbKnowledgePoints.git/raw/main/docs/download.md" title="查看本页的源代码" class="md-content__button md-icon">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
-    </a>
   
 
 
@@ -637,18 +624,7 @@
 <h2 id="1-zip">1 📁ZIP压缩包下载<a class="headerlink" href="#1-zip" title="Permanent link">&para;</a></h2>
 <div class="download-section">
   <div class="download-grid">
-    <div class="download-item">
-      <div class="file-icon">📦</div>
-      <div class="download-content">
-        <div class="file-info">
-          <h4>UWB源码包</h4>
-          <span class="file-size">15.6 MB</span>
-          <span class="file-date">2024-12-20</span>
-          <span class="file-version">v2.1.0</span>
-        </div>
-      </div>
-      <a href="../resource/UWB-Source.zip" class="download-btn" download="UWB-Source.zip">下载</a>
-    </div>
+
 
   </div>
 </div>
@@ -661,9 +637,8 @@
       <div class="file-icon">📡</div>
       <div class="download-content">
         <div class="file-info">
-          <h4>DK6 编程工具</h4>
-          <span class="file-size">1.2 MB</span>
-          <span class="file-date">2024-12-20</span>
+          <h4 style="margin-right: 15px;">DK6 编程工具</h4>
+          <span class="file-size" id="dk6-file-size">获取中...</span>
           <span class="file-version">v1.0.0</span>
         </div>
       </div>
@@ -677,18 +652,7 @@
 <h2 id="3">3 📄其他文件<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <div class="download-section">
   <div class="download-grid">
-    <div class="download-item">
-      <div class="file-icon">🎨</div>
-      <div class="download-content">
-        <div class="file-info">
-          <h4>UI设计资源</h4>
-          <span class="file-size">12.5 MB</span>
-          <span class="file-date">2024-12-16</span>
-          <span class="file-version">v2.0.0</span>
-        </div>
-      </div>
-      <a href="https://github.com/ximing766/UwbKnowledgePoints/raw/main/docs/resource/UI-Assets.psd" class="download-btn" download="UI-Assets.psd">下载</a>
-    </div>
+
   </div>
 </div>
 
@@ -696,18 +660,11 @@
 <h2 id="4">4 📝下载说明<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
 <p>如果您在下载或使用过程中遇到任何问题，请通过以下方式联系我们：</p>
 <ul>
-<li><strong>邮箱</strong>: ximing766@gmail.com</li>
+<li><strong>邮箱</strong>: xxx@gmail.com</li>
 <li><strong>GitHub Issues</strong>: <a href="https://github.com/ximing766/ximing766.github.io/issues">提交问题</a></li>
 </ul>
 <hr />
 <style>
-/* 美化标题样式 */
-h2 {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin: 2rem 0 1.5rem 0;
-  color: #1e293b;
-}
 
 .download-section {
   margin: 1rem 0;
@@ -924,6 +881,28 @@ h2 {
 </style>
 
 <script>
+// Auto-fetch file information
+async function fetchFileInfo() {
+  try {
+    // Fetch DK6Prog.exe file info
+    const dk6Response = await fetch('../resource/DK6Prog.exe', { method: 'HEAD' });
+    if (dk6Response.ok) {
+      const contentLength = dk6Response.headers.get('content-length');
+
+      // Update file size
+      if (contentLength) {
+        const sizeInMB = (parseInt(contentLength) / (1024 * 1024)).toFixed(1);
+        document.getElementById('dk6-file-size').textContent = sizeInMB + ' MB';
+      }
+    }
+  } catch (error) {
+    console.log('Failed to fetch file info:', error);
+  }
+}
+
+// Run when page loads
+document.addEventListener('DOMContentLoaded', fetchFileInfo);
+
 function downloadFile(filename) {
   // This is a placeholder function
   // In a real implementation, you would handle the actual file download
@@ -935,7 +914,7 @@ function downloadFile(filename) {
 </script>
 
 <hr />
-<p><em>最后更新: 2025</em></p>
+<p><em>本指南持续更新，请以最新版本为准。如有疑问，请联系技术支持。</em></p>
 
 
 
@@ -1051,7 +1030,7 @@ function downloadFile(filename) {
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright © 2024 Kewei@QLL. All rights reserved.
+      Copyright © 2025 Kewei@Qilang². All rights reserved.
     </div>
   
   
@@ -1096,7 +1075,7 @@ function downloadFile(filename) {
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>

@@ -17,7 +17,7 @@
 ## 📁 项目结构
 
 ```
-UwbKnowledgePoints/
+Uwb_doc/
 ├── docs/                          # 文档源文件
 │   ├── index.md                   # 首页
 │   ├── protocol/                  # 协议文档

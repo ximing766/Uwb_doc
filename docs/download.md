@@ -4,18 +4,41 @@
 
 ---
 
-## 1 📁ZIP压缩包下载
+## 1 📁压缩包下载
 
 <div class="download-section">
   <div class="download-grid">
-  
+    <div class="download-item">
+      <div class="file-icon">📦</div>
+      <div class="download-content">
+        <div class="file-info">
+          <h4 style="margin-right: 15px;">UWBDash-Lite</h4>
+          <span>串口工具</span>
+          <span class="file-size" id="uwbdash-file-size">获取中...</span>
+          <span class="file-version">v2.0.2</span>
+        </div>
+      </div>
+      <a href="../resource/UWBDash-Lite.zip" class="download-btn" download="UWBDash-Lite.zip">下载</a>
+    </div>
+    <div class="download-item">
+      <div class="file-icon">📋</div>
+      <div class="download-content">
+        <div class="file-info">
+          <h4 style="margin-right: 15px;">uwb-codec-c</h4>
+          <span>编解码包,在此基础上开发交易流程</span>
+          <span class="file-size" id="protocol-file-size">获取中...</span>
+          <span class="file-version">v1.0</span>
+        </div>
+      </div>
+      <a href="../resource/uwb_com_protocol_v1.0.rar" class="download-btn" download="uwb_com_protocol_v1.0.rar">下载</a>
+    </div>
     
   </div>
 </div>
 
 ---
 
-## 2 💻EXE可执行文件
+## 2 💻应用文件
 
 <div class="download-section">
   <div class="download-grid">
@@ -23,12 +46,39 @@
       <div class="file-icon">📡</div>
       <div class="download-content">
         <div class="file-info">
-          <h4 style="margin-right: 15px;">DK6 编程工具</h4>
+          <h4 style="margin-right: 15px;">DK6</h4>
+          <span>烧录工具</span>
           <span class="file-size" id="dk6-file-size">获取中...</span>
           <span class="file-version">v1.0.0</span>
         </div>
       </div>
       <a href="../resource/DK6Prog.exe" class="download-btn" download="DK6Prog.exe">下载</a>
+    </div>
+    
+    <div class="download-item">
+      <div class="file-icon">📱</div>
+      <div class="download-content">
+        <div class="file-info">
+          <h4 style="margin-right: 15px;">UWB-OTA</h4>
+          <span>BLE OTA工具</span>
+          <span class="file-size" id="uwb-ota-file-size">获取中...</span>
+          <span class="file-version">alpha</span>
+        </div>
+      </div>
+      <a href="../resource/UWB-OTA-alpha.apk" class="download-btn" download="UWB-OTA-alpha.apk">下载</a>
+    </div>
+    
+    <div class="download-item">
+      <div class="file-icon">🧪</div>
+      <div class="download-content">
+        <div class="file-info">
+          <h4 style="margin-right: 15px;">Transit</h4>
+          <span>UWB功能测试</span>
+          <span class="file-size" id="transit-file-size">获取中...</span>
+          <span class="file-version">v1.2</span>
+        </div>
+      </div>
+      <a href="../resource/Transit_1.2.apk" class="download-btn" download="Transit_1.2.apk">下载</a>
     </div>
     
   </div>
@@ -40,6 +90,32 @@
 
 <div class="download-section">
   <div class="download-grid">
+    
+    <div class="download-item">
+      <div class="file-icon">🔧</div>
+      <div class="download-content">
+        <div class="file-info">
+          <h4 style="margin-right: 15px;">IN_S固件</h4>
+          <span>从机固件文件</span>
+          <span class="file-size" id="ins-file-size">获取中...</span>
+          <span class="file-version">v1.0</span>
+        </div>
+      </div>
+      <a href="../resource/IN_S.bin" class="download-btn" download="IN_S.bin">下载</a>
+    </div>
+    
+    <div class="download-item">
+      <div class="file-icon">🔧</div>
+      <div class="download-content">
+        <div class="file-info">
+          <h4 style="margin-right: 15px;">IN_M固件</h4>
+          <span>主机固件文件</span>
+          <span class="file-size" id="inm-file-size">获取中...</span>
+          <span class="file-version">v1.0</span>
+        </div>
+      </div>
+      <a href="../resource/IN_M.bin" class="download-btn" download="IN_M.bin">下载</a>
+    </div>
     
   </div>
 </div>
@@ -275,19 +351,115 @@
 // Auto-fetch file information
 async function fetchFileInfo() {
   try {
-    // Fetch DK6Prog.exe file info
+    // Try to fetch file sizes using HEAD request first
     const dk6Response = await fetch('../resource/DK6Prog.exe', { method: 'HEAD' });
+    const uwbdashResponse = await fetch('../resource/UWBDash-Lite.zip', { method: 'HEAD' });
+    const protocolResponse = await fetch('../resource/uwb_com_protocol_v1.0.rar', { method: 'HEAD' });
+    const insResponse = await fetch('../resource/IN_S.bin', { method: 'HEAD' });
+    const inmResponse = await fetch('../resource/IN_M.bin', { method: 'HEAD' });
+    const uwbOtaResponse = await fetch('../resource/UWB-OTA-alpha.apk', { method: 'HEAD' });
+    const transitResponse = await fetch('../resource/Transit_1.2.apk', { method: 'HEAD' });
+    
+    // Update DK6Prog.exe file size
     if (dk6Response.ok) {
       const contentLength = dk6Response.headers.get('content-length');
-      
-      // Update file size
       if (contentLength) {
         const sizeInMB = (parseInt(contentLength) / (1024 * 1024)).toFixed(1);
         document.getElementById('dk6-file-size').textContent = sizeInMB + ' MB';
+      } else {
+        document.getElementById('dk6-file-size').textContent = '1.8 MB';
       }
+    } else {
+      document.getElementById('dk6-file-size').textContent = '1.8 MB';
+    }
+    
+    // Update UWBDash-Lite.zip file size
+    if (uwbdashResponse.ok) {
+      const contentLength = uwbdashResponse.headers.get('content-length');
+      if (contentLength) {
+        const sizeInMB = (parseInt(contentLength) / (1024 * 1024)).toFixed(1);
+        document.getElementById('uwbdash-file-size').textContent = sizeInMB + ' MB';
+      } else {
+        document.getElementById('uwbdash-file-size').textContent = '71.4 MB';
+      }
+    } else {
+      document.getElementById('uwbdash-file-size').textContent = '71.4 MB';
+    }
+    
+    // Update uwb_com_protocol_v1.0.rar file size
+    if (protocolResponse.ok) {
+      const contentLength = protocolResponse.headers.get('content-length');
+      if (contentLength) {
+        const sizeInKB = (parseInt(contentLength) / 1024).toFixed(1);
+        document.getElementById('protocol-file-size').textContent = sizeInKB + ' KB';
+      } else {
+        document.getElementById('protocol-file-size').textContent = '5.1 KB';
+      }
+    } else {
+      document.getElementById('protocol-file-size').textContent = '5.1 KB';
+    }
+    
+    // Update IN_S.bin file size
+    if (insResponse.ok) {
+      const contentLength = insResponse.headers.get('content-length');
+      if (contentLength) {
+        const sizeInKB = (parseInt(contentLength) / 1024).toFixed(1);
+        document.getElementById('ins-file-size').textContent = sizeInKB + ' KB';
+      } else {
+        document.getElementById('ins-file-size').textContent = '1.7 KB';
+      }
+    } else {
+      document.getElementById('ins-file-size').textContent = '1.7 KB';
+    }
+    
+    // Update IN_M.bin file size
+    if (inmResponse.ok) {
+      const contentLength = inmResponse.headers.get('content-length');
+      if (contentLength) {
+        const sizeInKB = (parseInt(contentLength) / 1024).toFixed(1);
+        document.getElementById('inm-file-size').textContent = sizeInKB + ' KB';
+      } else {
+        document.getElementById('inm-file-size').textContent = '2.8 KB';
+      }
+    } else {
+      document.getElementById('inm-file-size').textContent = '2.8 KB';
+    }
+    
+    // Update UWB-OTA-alpha.apk file size
+    if (uwbOtaResponse.ok) {
+      const contentLength = uwbOtaResponse.headers.get('content-length');
+      if (contentLength) {
+        const sizeInMB = (parseInt(contentLength) / (1024 * 1024)).toFixed(1);
+        document.getElementById('uwb-ota-file-size').textContent = sizeInMB + ' MB';
+      } else {
+        document.getElementById('uwb-ota-file-size').textContent = '8.5 MB';
+      }
+    } else {
+      document.getElementById('uwb-ota-file-size').textContent = '8.5 MB';
+    }
+    
+    // Update Transit_1.2.apk file size
+    if (transitResponse.ok) {
+      const contentLength = transitResponse.headers.get('content-length');
+      if (contentLength) {
+        const sizeInMB = (parseInt(contentLength) / (1024 * 1024)).toFixed(1);
+        document.getElementById('transit-file-size').textContent = sizeInMB + ' MB';
+      } else {
+        document.getElementById('transit-file-size').textContent = '12.3 MB';
+      }
+    } else {
+      document.getElementById('transit-file-size').textContent = '12.3 MB';
     }
   } catch (error) {
-    console.log('Failed to fetch file info:', error);
+    console.log('Failed to fetch file info, using fallback sizes:', error);
+    // Set fallback sizes for all files
+    document.getElementById('dk6-file-size').textContent = '1.8 MB';
+    document.getElementById('uwbdash-file-size').textContent = '71.4 MB';
+    document.getElementById('protocol-file-size').textContent = '5.1 KB';
+    document.getElementById('ins-file-size').textContent = '1.7 KB';
+    document.getElementById('inm-file-size').textContent = '2.8 KB';
+    document.getElementById('uwb-ota-file-size').textContent = '8.5 MB';
+    document.getElementById('transit-file-size').textContent = '12.3 MB';
   }
 }
 

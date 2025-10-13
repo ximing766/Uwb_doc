@@ -1,9 +1,9 @@
 site_name: UWB技术文档
 site_description: "记录技术笔记、项目文档和工具指南"
-site_author: "Kewei@QLL"
+site_author: "Kewei@Qilang²"
 copyright: "Copyright © 2025 Kewei@Qilang². All rights reserved."
-site_url: "https://github.com/ximing766/UwbKnowledgePoints.git"
-repo_url: https://github.com/ximing766/UwbKnowledgePoints.git
+site_url: "https://github.com/ximing766/Uwb_doc.git"
+repo_url: https://github.com/ximing766/Uwb_doc.git
 repo_name: GitHub
 edit_uri: edit/main/docs/
 
@@ -97,7 +97,7 @@ extra:
     provider: mike
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/ximing766/UwbKnowledgePoints.git
+      link: https://github.com/ximing766/ximing766.github.io
       name: GitHub
     - icon: fontawesome/solid/paper-plane
       link: mailto:ximing766@gmail.com
