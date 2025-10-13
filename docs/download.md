@@ -351,14 +351,14 @@
 // Auto-fetch file information
 async function fetchFileInfo() {
   try {
-    // Try to fetch file sizes using HEAD request first
-    const dk6Response = await fetch('../resource/DK6Prog.exe', { method: 'HEAD' });
-    const uwbdashResponse = await fetch('../resource/UWBDash-Lite.zip', { method: 'HEAD' });
-    const protocolResponse = await fetch('../resource/uwb_com_protocol_v1.0.rar', { method: 'HEAD' });
-    const insResponse = await fetch('../resource/IN_S.bin', { method: 'HEAD' });
-    const inmResponse = await fetch('../resource/IN_M.bin', { method: 'HEAD' });
-    const uwbOtaResponse = await fetch('../resource/UWB-OTA-alpha.apk', { method: 'HEAD' });
-    const transitResponse = await fetch('../resource/Transit_1.2.apk', { method: 'HEAD' });
+    // Try to fetch file sizes using GET request (compatible with MkDocs dev server)
+    const dk6Response = await fetch('../resource/DK6Prog.exe');
+    const uwbdashResponse = await fetch('../resource/UWBDash-Lite.zip');
+    const protocolResponse = await fetch('../resource/uwb_com_protocol_v1.0.rar');
+    const insResponse = await fetch('../resource/IN_S.bin');
+    const inmResponse = await fetch('../resource/IN_M.bin');
+    const uwbOtaResponse = await fetch('../resource/UWB-OTA-alpha.apk');
+    const transitResponse = await fetch('../resource/Transit_1.2.apk');
     
     // Update DK6Prog.exe file size
     if (dk6Response.ok) {
