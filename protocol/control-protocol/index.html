@@ -1093,13 +1093,14 @@
 <li>如无特殊要求，C1/C3 可忽略  </li>
 <li>HALT 为 C2 命令中发送长度为 1 的 APDU 数组 <code>[0x00]</code>  </li>
 <li>收到时间戳请求判断命令为 <code>0xC4</code> 即可  </li>
-<li>发送时间戳为 4 字节 16 进制，小端存储。如：<br />
-```
-00 00 FF 14 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C4 00 01 68 F6 0A DB F6 00</li>
+<li>发送时间戳为 4 字节 16 进制，小端存储。如：  </li>
 </ol>
-<p>0x68F60ADB = 1,760,955,099 (2025-10-20 18:11:39)
-```</p>
 </blockquote>
+<div class="codehilite"><pre><span></span><code>00 00 FF 14 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C4 00 01 68 F6 0A DB F6 00
+
+0x68F60ADB = 1,760,955,099 (2025-10-20 18:11:39)
+</code></pre></div>
+
 <h2 id="5">5 消息示例<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="_2">帧结构示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <table>
