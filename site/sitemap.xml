@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ximing766.github.io/Uwb_doc/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2025-10-21</lastmod>
+    </url>
+    <url>
+         <loc>https://ximing766.github.io/Uwb_doc/download/</loc>
+         <lastmod>2025-10-21</lastmod>
     </url>
     <url>
          <loc>https://ximing766.github.io/Uwb_doc/guide/overview/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2025-10-21</lastmod>
     </url>
     <url>
          <loc>https://ximing766.github.io/Uwb_doc/guide/quick-start/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2025-10-21</lastmod>
     </url>
     <url>
          <loc>https://ximing766.github.io/Uwb_doc/protocol/control-protocol/</loc>
-         <lastmod>2025-10-20</lastmod>
+         <lastmod>2025-10-21</lastmod>
     </url>
 </urlset>
