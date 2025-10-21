@@ -307,7 +307,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../download/" class="md-tabs__link">
+      <a href="../../download.md" class="md-tabs__link">
         
   
   
@@ -783,7 +783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download/" class="md-nav__link">
+      <a href="../../download.md" class="md-nav__link">
         
   
   
@@ -1049,6 +1049,11 @@
 <td>特殊APDU</td>
 <td>PHONE返回响应APDU处理后发往Reader</td>
 </tr>
+<tr>
+<td><strong>0xC4</strong></td>
+<td>Time_stamp</td>
+<td>UWB向Reader请求时间戳</td>
+</tr>
 </tbody>
 </table>
 <h3 id="reader-uwb">Reader → UWB 命令<a class="headerlink" href="#reader-uwb" title="Permanent link">&para;</a></h3>
@@ -1064,7 +1069,7 @@
 <tr>
 <td><strong>0xC1</strong></td>
 <td>初始化响应</td>
-<td>发送读卡APDU（可选项，UWB发送C1请求时发送）</td>
+<td>发送读卡APDU（可选，UWB发送C1请求时发送）</td>
 </tr>
 <tr>
 <td><strong>0xC2</strong></td>
@@ -1076,12 +1081,21 @@
 <td>特殊APDU</td>
 <td>UWB收到APDU需要额外处理才能发送到PHONE</td>
 </tr>
+<tr>
+<td><strong>0xC4</strong></td>
+<td>Time_stamp</td>
+<td>Reader向UWB响应时间戳</td>
+</tr>
 </tbody>
 </table>
 <blockquote>
 <p><strong>注意</strong>：
-如无特殊要求,C1/C3可忽略
-HALT为C2命令中发送长度为1的APDU数组[0x00].</p>
+1.如无特殊要求,C1/C3可忽略
+2.HALT为C2命令中发送长度为1的APDU数组[0x00].
+3.收到时间戳请求判断命令为0xC4即可.
+4.发送时间戳为4字节16进制,小端存储.如:
+    <code>00 00 FF 14 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C4 00 01 68 F6 0A DB F6 00
+    0x68F60ADB = 1,760,955,099 (2025-10-20 18:11:39).</code></p>
 </blockquote>
 <h2 id="5">5 消息示例<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h3 id="_2">帧结构示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -1205,13 +1219,13 @@ HALT为C2命令中发送长度为1的APDU数组[0x00].</p>
 <h3 id="_4">⚠️ 错误处理机制<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>若步骤4、8、12失败，UWB将流程回退至步骤3</p>
+<p>若步骤4、8、12、14失败，UWB将流程回退至步骤3</p>
 </li>
 <li>
-<p>若步骤4、8、12失败，Reader需重新校验新的卡信息，防止User已经完成扣费情况下二次扣费，若User已经完成扣费应当直接下发HALT，结束交易流程。</p>
+<p>若步骤4、8、12失败，Reader需重新校验新的卡信息，防止二次扣费，若User已经扣费直接发HALT，结束交易。</p>
 </li>
 <li>
-<p>若步骤6、10、14失败，UWB将流程回退至步骤5</p>
+<p>若步骤6、10失败，UWB将流程回退至步骤5</p>
 </li>
 </ul>
 </div>
