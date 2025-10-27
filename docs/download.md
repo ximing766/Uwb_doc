@@ -14,8 +14,8 @@
         <div class="file-info">
           <h4 style="margin-right: 15px;">UWBDash-Lite</h4>
           <span>串口工具</span>
-          <span class="file-size">71.4 MB</span>
-          <span class="file-version">v2.0.2</span>
+          <span class="file-size">75 MB</span>
+          <span class="file-version">v2.1</span>
         </div>
       </div>
       <a href="../resource/UWBDash-Lite.zip" class="download-btn" download="UWBDash-Lite.zip">下载</a>
