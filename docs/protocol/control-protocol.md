@@ -81,6 +81,8 @@
 | **0xC2** | 通用APDU | PHONE返回响应APDU直接发往Reader |
 | **0xC3** | 特殊APDU | PHONE返回响应APDU处理后发往Reader |
 | **0xC4** | Time_stamp | UWB向Reader请求时间戳 |
+| **0xC5** | Info | UWB响应信息 |
+
 
 ### Reader → UWB 命令
 
@@ -90,17 +92,29 @@
 | **0xC2** | 通用APDU | UWB收到APDU将直接发送到PHONE |
 | **0xC3** | 特殊APDU | UWB收到APDU需要额外处理才能发送到PHONE |
 | **0xC4** | Time_stamp | Reader向UWB响应时间戳 |
+| **0xC5** | Info | Reader读UWB信息 |
 
 
-
-> 1. 如无特殊要求，C1/C3 可忽略  
+> 1. 无特殊要求，C1/C3 可忽略  
 > 2. HALT 为 C2 命令中发送长度为 1 的 APDU 数组 `[0x00]`  
-> 3. 收到时间戳请求判断命令为 `0xC4` 即可  
-> 4. 发送时间戳为 4 字节 16 进制，小端存储。如：  
-```
-00 00 FF 14 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C4 00 01 68 F6 0A DB F6 00
- 
-0x68F60ADB = 1,760,955,099 (2025-10-20 18:11:39)
+> 3. 发送时间戳为 4 字节 16 进制，小端存储。
+> 4. C5指令中Uwb返回信息按照apd解析,当前版本仅1条软件版本
+> 5. 指令参考:
+```c
+//4.1 UWB -> Reader 时间戳请求
+00 00 FF 11 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C4 00 01 00 39 00
+
+//4.2 Reader -> UWB 时间戳响应
+// 0x68F60ADB = 1,760,955,099 (2025-10-20 18:11:39)
+00 00 FF 16 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C4 00 01 04 00 68 F6 0A DB F2 00
+
+//4.3 Reader -> UWB 信息请求
+00 00 FF 11 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C5 00 01 00 38 00
+
+//4.4 UWB -> Reader 信息响应
+// 03 00: 长度
+// 03 02 00: 软件版本号 3.2.0
+00 00 FF 14 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C5 00 01 03 00 03 02 30 00
 ```
     
 
