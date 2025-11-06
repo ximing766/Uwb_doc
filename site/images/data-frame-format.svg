@@ -70,11 +70,18 @@
   <text x="950" y="45" text-anchor="middle" font-family="Arial" font-size="10">不定长</text>
   
   <!-- 数据域详细结构 -->
-  <text x="500" y="85" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#333">数据帧结构 (UWB读卡器控制协议)</text>
+  
   
   <!-- 箭头指向Data部分 -->
-  <path d="M 950 60 L 950 75" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
-  <text x="950" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">包含APDU数据+DCS+结束位</text>
+  <path d="M 950 70 L 950 85" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="950" y="105" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">APDU数据（含 DCS+END）</text>
+
+  <!-- 长度范围：从源地址到Data（Data不含DCS+End） -->
+  <g id="data-length-annotation">
+    <!-- 括号线条：覆盖 源地址 到 Data 段 -->
+    <path d="M 300 70 L 300 80 M 300 75 L 995 75 M 995 70 L 995 80" stroke="#333" stroke-width="2" fill="none"/>
+    <text x="650" y="110" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">长度范围（源地址→Data，Data不含 DCS+End）</text>
+  </g>
   
   <!-- 定义箭头 -->
   <defs>
