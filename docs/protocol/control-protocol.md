@@ -82,6 +82,9 @@
 | **0xC3** | 特殊APDU | PHONE返回响应APDU处理后发往Reader |
 | **0xC4** | Time_stamp | UWB向Reader请求时间戳 |
 | **0xC5** | Info | UWB响应信息 |
+| **0xC6** | Get Read Scope | 响应读卡距离设置范围 |
+| **0xC7** | Get Polling Distance | 响应当前读卡距离值 |
+| **0xC8** | Set Polling Distance | 响应设置读卡距离结果 |
 
 
 ### Reader → UWB 命令
@@ -93,6 +96,9 @@
 | **0xC3** | 特殊APDU | UWB收到APDU需要额外处理才能发送到PHONE |
 | **0xC4** | Time_stamp | Reader向UWB响应时间戳 |
 | **0xC5** | Info | Reader读UWB信息 |
+| **0xC6** | Get Read Scope | 请求读卡距离设置范围 |
+| **0xC7** | Get Polling Distance | 请求当前读卡距离值 |
+| **0xC8** | Set Polling Distance | 设置当前读卡距离值 |
 
 
 > 1. 无特殊要求，C1/C3 可忽略  
@@ -118,6 +124,31 @@
 
 //4.5 Reader -> UWB HALT
 00 00 FF 13 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C2 00 01 01 00 00 3A 00
+
+//4.6 Reader -> UWB 获取可设置范围请求 (C6)
+00 00 FF 11 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C6 00 01 00 37 00
+
+//4.7 UWB -> Reader 获取可设置范围响应 (C6)
+// 02 00: 长度
+// 00 96: 范围 0 - 150 (0x96)
+00 00 FF 14 00 06 FF FF FF FF FF 05 FF FF FF FF FF 01 C6 00 01 02 00 00 96 9C 00
+
+//4.8 Reader -> UWB 获取当前读卡距离请求 (C7)
+00 00 FF 11 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C7 00 01 00 36 00
+
+//4.9 UWB -> Reader 获取当前读卡距离响应 (C7)
+// 02 00: 长度
+// 2D 00: 当前距离 45 (0x002D)
+00 00 FF 14 00 06 FF FF FF FF FF 05 FF FF FF FF FF 01 C7 00 01 02 00 2D 00 05 00
+
+//4.10 Reader -> UWB 设置当前读卡距离 (C8)
+// 02 00: 长度
+// 32 00: 设置距离为 50 (0x0032)
+00 00 FF 13 00 05 FF FF FF FF FF 06 FF FF FF FF FF 01 C8 00 01 02 00 32 00 2E 00
+
+//4.11 UWB -> Reader 设置结果响应 (C8)
+// 0x00: 成功
+00 00 FF 11 00 06 FF FF FF FF FF 05 FF FF FF FF FF 01 C8 00 00 00 36 00
 ```
 
 
