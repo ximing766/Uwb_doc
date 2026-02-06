@@ -1,7 +1,7 @@
 # UWB技术文档 <small>调试指南</small>
 
 欢迎来到UWB（Ultra-Wideband）技术知识点文档站点。本站点收集整理了UWB相关的技术文档。
-测试工作流
+
 ## 📚 文档导航
 
 ### 协议文档
@@ -14,6 +14,10 @@
 ### 资源下载
 - [DK6](download.md) - DK6烧录工具
 - [UWBDash](download.md) - UWB调试工具
+
+## 🏗️ 系统架构
+
+![UWB System Architecture](UWB_System_Architecture.svg)
 
 <div style="text-align: center; margin-top: 50px; margin-bottom: 30px;">
   <a href="guide/quick-start/" class="md-button md-button--primary" style="margin-right: 20px;">快速开始</a>

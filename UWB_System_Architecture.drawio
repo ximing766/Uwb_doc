@@ -1,0 +1,98 @@
+<mxfile host="65bd71144e">
+    <diagram id="3I0fTZezre6rmS3mdrsC" name="第 1 页">
+        <mxGraphModel dx="714" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="hw_group" value="UWB 模组硬件层" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;startSize=30;fontStyle=1;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="400" width="400" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="dev_big" value="大 UWB 模组" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="hw_group" vertex="1">
+                    <mxGeometry x="20" y="50" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="dev_small" value="小 UWB 模组" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#60a917;fontColor=#ffffff;strokeColor=#2D7600;" parent="hw_group" vertex="1">
+                    <mxGeometry x="140" y="50" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="dev_tag" value="UWB Tag&#10;(OTA: 未完成)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#666666;dashed=1;strokeWidth=2;" parent="hw_group" vertex="1">
+                    <mxGeometry x="260" y="50" width="100" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="pc_group" value="PC 上位机部分" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;startSize=30;fontStyle=1;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="100" width="240" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="pc_comp" value="通用编译上位机&#10;(多项目/多编译模式)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" parent="pc_group" vertex="1">
+                    <mxGeometry x="20" y="50" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="pc_prog" value="通用烧录上位机&#10;(多重烧录控制)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" parent="pc_group" vertex="1">
+                    <mxGeometry x="20" y="140" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="pc_mon" value="通用串口监控上位机&#10;(轨迹展示/自动化测试/图表)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" parent="pc_group" vertex="1">
+                    <mxGeometry x="20" y="230" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="pc_sim" value="读卡器模拟上位机" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" parent="pc_group" vertex="1">
+                    <mxGeometry x="20" y="340" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="app_group" value="App 应用部分" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;startSize=30;fontStyle=1;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="840" y="100" width="240" height="460" as="geometry"/>
+                </mxCell>
+                <mxCell id="app_ota" value="BLE_OTA 上位机&#10;(模组升级/蓝牙调试)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" parent="app_group" vertex="1">
+                    <mxGeometry x="20" y="50" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="app_uart" value="BT_UART_APP&#10;(蓝牙串口/内网穿透/远程)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" parent="app_group" vertex="1">
+                    <mxGeometry x="20" y="160" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="app_transit" value="Transit APP (多版本)&#10;(UWB功能/调试)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d79b00;" parent="app_group" vertex="1">
+                    <mxGeometry x="20" y="270" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="infra_doc" value="自动化文档管理工程&#10;(未完成/自动部署)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;dashed=1;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="470" y="620" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="infra_workflow" value="Workflow" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=3;dashed=1;fontStyle=1;fontSize=14;fontColor=#4A0070;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="110" width="200" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_pc_prog_hw" value="Serial/232/JLink" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;curved=1;strokeWidth=2;" parent="1" source="pc_prog" target="hw_group" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_pc_mon_hw" value="Serial/Data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;" parent="1" source="pc_mon" target="hw_group" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_pc_sim_hw" value="Serial Connection" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;curved=1;strokeWidth=2;dashed=1;" parent="1" source="pc_sim" target="hw_group" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_app_ota_hw" value="BLE (OTA/Debug)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;curved=1;strokeWidth=2;strokeColor=#d79b00;" parent="1" source="app_ota" target="hw_group" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_app_uart_hw" value="BT Forwarding" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;strokeColor=#d79b00;" parent="1" source="app_uart" target="hw_group" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_app_transit_hw" value="UWB/BT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;curved=1;strokeWidth=2;strokeColor=#d79b00;" parent="1" source="app_transit" target="hw_group" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_remote" value="Remote Debug (Network)" style="edgeStyle=curvedEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;dashed=1;strokeColor=#FF0000;strokeWidth=2;" parent="1" source="app_uart" target="pc_mon" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="560" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="" style="endArrow=classic;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="app_group" target="infra_doc">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="570" y="630" as="sourcePoint"/>
+                        <mxPoint x="620" y="580" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="3" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="hw_group" target="infra_doc">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="570" y="630" as="sourcePoint"/>
+                        <mxPoint x="620" y="580" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="" style="endArrow=classic;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pc_group" target="infra_doc">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="570" y="630" as="sourcePoint"/>
+                        <mxPoint x="620" y="580" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
